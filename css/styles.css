@@ -197,7 +197,7 @@ nav {
   background-color: var(--white);
   overflow: hidden;
   border-radius: var(--border-radius);
-  height: 460px;
+  height: 500px;
   box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
 }
 
