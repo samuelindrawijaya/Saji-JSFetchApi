@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    
+    <title>SajiKU</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="logo nav__logo">
+          <a href="#">Saji<span>Ku</span></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <span><i class="ri-menu-line"></i></span>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#special">Special</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <div class="nav__btn">
+        <button class="btn"><i class="ri-shopping-bag-fill"></i></button>
+      </div>
+    </nav>
+    <header class="section__container header__container" id="home">
+      <div class="header__image">
+        <img src="assets/header.png" alt="header" />
+      </div>
+      <div class="header__content">
+        <h1>Masak,Makanan Keluarga <span>SAJI</span>.</h1>
+        <p class="section__description">
+          Dengan Saji, memasang dirumah menjadi sangat mudah!
+        </p>
+        <div class="header__btn">
+          <button class="btn">Get Started</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container special__container" id="special">
+      <h2 class="section__header">Cari Resep Spesial</h2>
+      <p class="section__description">
+        SAJI menawarkan pembacanya koleksi resep yang mudah dilakukan dirumah, ditambah panduan usaha kuliner. 
+        Uniknya, setiap resep masakan menggunakkan bahan-bahan yang berkualitas dan terjangkau dan penuh variasi, 
+        semakin sempurna untuk keluarga.
+      </p>
+      <div class="search_wrap search_wrap_3">
+        <div class="search_box">
+          <input type="text" class="input"  id="foodname"  placeholder="search...">
+          <div class="btn btn_common">
+            <button class="btn btn_common fa fa-search" onclick="fetchData();"></button>
+          </div>
+        </div>
+      </div>
+      <div class="special__grid" id="special__grid">
+      </div>
+      <nav class="pagination-container">
+        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+          &lt;
+        </button>
+    
+        <div id="pagination-numbers">
+    
+        </div>
+    
+        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+          &gt;
+        </button>
+      </nav>
+      <section class="section__container discover__container" id="discover">
+        <h2 class="section__header">
+          Recipe
+        </h2>
+        <div class="discover__grid">
+          <div class="discover__destination">
+            <div class="discover__destination__image" id="discover__destination__image">
+              <img src="assets/sonxm5.webp" id="recipe-img1" alt="destination" />
+              <img src="assets/destination-2.jpg" id="recipe-img2" alt="destination" />
+            </div>
+            <h4 id="h4_recipe">Discover your dream<br />destinations</h4>
+            <p id="p_recipe" class="destination__description">
+              Navigate through a curated selection of travel options, each
+              designed to ignite your wanderlust and fulfill your travel
+              aspirations.
+            </p>  
+          </div>
+        </div>
+      </section>
+    <footer class="footer" id="contact">
+      <div class="footer__bar">
+        Copyright © 2024 Majalah Saji Web. All rights reserved.
+      </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/main.js"></script>
+  </body>
+</html>
