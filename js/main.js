@@ -76,92 +76,101 @@ async function fetchData() {
       }
 
       data = await response.json();
-      console.log(data)
-      arrayLength = data['meals'].length;
-      console.log(arrayLength);
-      if (arrayLength === 0) {
-        alert('test');
+      if(data['meals'] == null)
+      {
+        document.getElementById("search_box_notif").innerHTML = 'Resep tidak ditemukan...';
       }
-      else {
-        for (var i = 0; i < arrayLength; i++) {
+      else
+      {
 
-          //console.log(data['meals'][i]['strMeal']);
-          var specialGrid = document.getElementById("special__grid");
-          var getDiv = document.createElement("div");
-          getDiv.setAttribute("class", "blog__card");
-          getDiv.setAttribute("id", "blog__card");
-          var cardImg = document.createElement('img');
-          cardImg.src = data['meals'][i]['strMealThumb'];
-          getDiv.appendChild(cardImg);
-
-          var getCardContent = document.createElement("div");
-          getCardContent.setAttribute("class", "blog__card__content");
-
-          var getH3 = document.createElement("h3");
-          getH3.appendChild(document.createTextNode(data['meals'][i]['strArea'] + ' ' + data['meals'][i]['strCategory']));
-          getCardContent.appendChild(getH3);
-          var getH4 = document.createElement("h4");
-          getH4.appendChild(document.createTextNode(data['meals'][i]['strMeal']));
-          getCardContent.appendChild(getH4);
-          var getP = document.createElement("p");
-          recipeTags = data['meals'][i]['strTags'];
-          if (recipeTags != null) {
-            recipeTags = recipeTags.replaceAll(',', "  ");
-          }
-          else {
-            recipeTags = 'no description';
-          }
-          getP.appendChild(document.createTextNode(recipeTags));
-          getCardContent.appendChild(getP);
-
-          getDiv.appendChild(getCardContent);
-
-          //add button 
-          var getDivBtn = document.createElement("div");
-          getDivBtn.setAttribute("class", "special__footer");
-
-          var getButton = document.createElement("button")
-          var idBtn = String(data['meals'][i]['idMeal']);
-          // console.log(idBtn);
-          getButton.setAttribute("class", "btn");
-          getButton.setAttribute("id", idBtn);
-          getButton.setAttribute('onclick', `addRecipeExplaination(${idBtn});`);
-          getButton.appendChild(document.createTextNode('Baca ini'));
-          //var mealId = data['meals'][i]['idMeal'];
-
-
-          getDivBtn.appendChild(getButton);
-          // <div class="special__footer">
-          // <button class="btn">Add to Cart</button>
-          // </div>
-
-          specialGrid.appendChild(getDiv);
-          getDiv.appendChild(getDivBtn);
-
-          // document.getElementById(idBtn).onclick = function()
-          // {
-          //   console.log(document.getElementById(idBtn));
-          //   addRecipeExplaination(idBtn);
-          // };
-          // li.appendChild(document.createTextNode(data['meals'][i]['strMeal']));
-          // li.setAttribute("id", listId); // added line
-          // ul.appendChild(li);
-
-          //ad input hiddiden//
-
-
-          // //then img maybe
-          // let img = document.createElement('img');
-          // img.src = data['meals'][i]['strMealThumb'];
-          // ul.appendChild(img);
+        document.getElementById("search_box_notif").innerHTML = '';
+        arrayLength = data['meals'].length;
+        console.log(arrayLength);
+        if (arrayLength === 0) {
+          alert('test');
         }
-        var getArrowPrev = document.getElementById("prev-button");
-        getArrowPrev.style.display = "block";
-        var getArrowNext = document.getElementById("next-button");
-        getArrowNext.style.display = "block";
-        paginatedWeb();
+        else {
+          for (var i = 0; i < arrayLength; i++) {
+  
+            //console.log(data['meals'][i]['strMeal']);
+            var specialGrid = document.getElementById("special__grid");
+            var getDiv = document.createElement("div");
+            getDiv.setAttribute("class", "blog__card");
+            getDiv.setAttribute("id", "blog__card");
+            var cardImg = document.createElement('img');
+            cardImg.src = data['meals'][i]['strMealThumb'];
+            getDiv.appendChild(cardImg);
+  
+            var getCardContent = document.createElement("div");
+            getCardContent.setAttribute("class", "blog__card__content");
+  
+            var getH3 = document.createElement("h3");
+            getH3.appendChild(document.createTextNode(data['meals'][i]['strArea'] + ' ' + data['meals'][i]['strCategory']));
+            getCardContent.appendChild(getH3);
+            var getH4 = document.createElement("h4");
+            getH4.appendChild(document.createTextNode(data['meals'][i]['strMeal']));
+            getCardContent.appendChild(getH4);
+            var getP = document.createElement("p");
+            recipeTags = data['meals'][i]['strTags'];
+            if (recipeTags != null) {
+              recipeTags = recipeTags.replaceAll(',', "  ");
+            }
+            else {
+              recipeTags = 'no description';
+            }
+            getP.appendChild(document.createTextNode(recipeTags));
+            getCardContent.appendChild(getP);
+  
+            getDiv.appendChild(getCardContent);
+  
+            //add button 
+            var getDivBtn = document.createElement("div");
+            getDivBtn.setAttribute("class", "special__footer");
+  
+            var getButton = document.createElement("button")
+            var idBtn = String(data['meals'][i]['idMeal']);
+            // console.log(idBtn);
+            getButton.setAttribute("class", "btn");
+            getButton.setAttribute("id", idBtn);
+            getButton.setAttribute('onclick', `addRecipeExplaination(${idBtn});`);
+            getButton.appendChild(document.createTextNode('Baca ini'));
+            //var mealId = data['meals'][i]['idMeal'];
+  
+  
+            getDivBtn.appendChild(getButton);
+            // <div class="special__footer">
+            // <button class="btn">Add to Cart</button>
+            // </div>
+  
+            specialGrid.appendChild(getDiv);
+            getDiv.appendChild(getDivBtn);
+  
+            // document.getElementById(idBtn).onclick = function()
+            // {
+            //   console.log(document.getElementById(idBtn));
+            //   addRecipeExplaination(idBtn);
+            // };
+            // li.appendChild(document.createTextNode(data['meals'][i]['strMeal']));
+            // li.setAttribute("id", listId); // added line
+            // ul.appendChild(li);
+  
+            //ad input hiddiden//
+  
+  
+            // //then img maybe
+            // let img = document.createElement('img');
+            // img.src = data['meals'][i]['strMealThumb'];
+            // ul.appendChild(img);
+          }
+          var getArrowPrev = document.getElementById("prev-button");
+          getArrowPrev.style.display = "block";
+          var getArrowNext = document.getElementById("next-button");
+          getArrowNext.style.display = "block";
+          paginatedWeb();
+        }
+        
       }
-      
+
     // let pokemonSprite = data.sprites.front_default;
     // let imgElement = document.getElementById("pokemon-img");
 

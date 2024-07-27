@@ -9,6 +9,7 @@
   --white: #ffffff;
   --max-width: 1200px;
   --border-radius: 20px;
+  --error-color : #ff3333;
 }
 
 * {
@@ -35,6 +36,14 @@
 .section__description {
   color: var(--text-light);
   line-height: 1.75rem;
+  text-align: center;
+}
+
+.search_box_notif {
+  padding-bottom: 40px;
+  color: var(--error-color);
+  line-height: 1.75rem;
+  font-size: 1.6rem;
   text-align: center;
 }
 
