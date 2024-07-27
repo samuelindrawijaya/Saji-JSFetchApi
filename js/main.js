@@ -62,8 +62,8 @@ async function fetchData() {
 
       //tiap kali seach kosongkan dulu semua cardnya dan paginated list
       data = [];
-      let paginatedList = document.getElementById("special__grid");
-      let listItems = paginatedList.querySelectorAll(".blog__card").forEach(e => e.remove());;
+      let cardList = document.getElementById("special__grid");
+      let listItems = cardList.querySelectorAll(".blog__card").forEach(e => e.remove());;
       let paginationNumbers = document.getElementById("pagination-numbers");
       let listpage = paginationNumbers.querySelectorAll(".pagination-number").forEach(e => e.remove());;
       
