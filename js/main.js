@@ -56,6 +56,7 @@ var data = [];
 async function fetchData() {
   var arrayLength = 0;
   var recipeTags = '';
+  ClickDisabled();
   HideContainer();
   try {
       
@@ -160,7 +161,7 @@ async function fetchData() {
         getArrowNext.style.display = "block";
         paginatedWeb();
       }
-    
+      
     // let pokemonSprite = data.sprites.front_default;
     // let imgElement = document.getElementById("pokemon-img");
 
@@ -171,6 +172,17 @@ async function fetchData() {
   catch (error) {
     console.error(error);
   }
+  ClickEnabled();
+}
+
+function ClickDisabled()
+{
+   document.getElementById('btn_search').disabled = true;
+}
+
+function ClickEnabled()
+{
+  document.getElementById('btn_search').disabled = false;
 }
 
 //https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772
