@@ -190,6 +190,13 @@ nav {
   text-align: center;
 }
 
+.img_notif{
+  height: 200px;
+  width: 200px;
+  align-items: center;
+  margin-inline:auto;
+}
+
 .special__container :is(.section__header, .section__description) {
   max-width: 600px;
   margin-inline: auto;
