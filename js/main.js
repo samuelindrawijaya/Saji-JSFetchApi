@@ -59,14 +59,14 @@ async function fetchData() {
   ClickDisabled();
   HideContainer();
   try {
+
+      //tiap kali seach kosongkan dulu semua cardnya dan paginated list
+      data = [];
+      let paginatedList = document.getElementById("special__grid");
+      let listItems = paginatedList.querySelectorAll(".blog__card").forEach(e => e.remove());;
+      let paginationNumbers = document.getElementById("pagination-numbers");
+      let listpage = paginationNumbers.querySelectorAll(".pagination-number").forEach(e => e.remove());;
       
-      if (checkSearch != '') {
-          let paginatedList = document.getElementById("special__grid");
-          let listItems = paginatedList.querySelectorAll(".blog__card").forEach(e => e.remove());;
-          let paginationNumbers = document.getElementById("pagination-numbers");
-          let listpage = paginationNumbers.querySelectorAll(".pagination-number").forEach(e => e.remove());;
-          data = [];
-      }
       //let foodName = document.getElementById("foodName").value.toLowerCase();
       var foodName = document.getElementById("foodname").value.toLowerCase();
       checkSearch = foodName;
