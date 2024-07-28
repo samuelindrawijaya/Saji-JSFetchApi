@@ -5,21 +5,10 @@ let modalBackground = document.getElementById('modal-background');
 // select the close-btn 
 let closeBtn = document.getElementById('close-btn');
 
-// shows the modal when the user clicks open-btn
-// openBtn.addEventListener('click', function() {
- 
-// });
-
 function modalShow()
 {
   modalBackground.style.display = 'block';
 }
-
-
-// function modalHide()
-// {
-//   modalBackground.style.display = 'none';
-// }
 
 // hides the modal when the user clicks close-btn
 closeBtn.addEventListener('click', function() {

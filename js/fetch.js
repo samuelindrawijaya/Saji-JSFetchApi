@@ -9,6 +9,7 @@ hideArrow();
 var checkSearch = '';
 var data = [];
 async function fetchData() {
+  hideImage();
   showSpinner();
   var arrayLength = 0;
   var recipeTags = '';
