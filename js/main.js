@@ -73,13 +73,15 @@ async function addRecipeExplaination(id) {
     var recipeIns = datas['strInstructions'];
     if (recipeIns != null) {
       recipeIns = recipeIns.replaceAll('\r\n', "<br>");
+      recipeIns = recipeIns.replaceAll('.', "<br>");
     }
     else {
       recipeIns = 'no description';
     }
-    document.getElementById("recipe-img1").src = datas['strMealThumb'];
+
+    document.getElementById("recipe_header").innerHTML = datas['strMeal'];
     document.getElementById("recipe-img2").src = datas['strMealThumb'];
-    document.getElementById("h4_recipe").innerHTML = datas['strMeal'];
+    document.getElementById("h4_recipe").innerHTML = datas['strCategory'];
     document.getElementById("p_recipe").innerHTML = recipeIns;
     //   <div class="recipe_image">
     //   <img src="assets/destination-1.jpg" id="recipe-img1" alt="destination" />
@@ -97,9 +99,13 @@ async function addRecipeExplaination(id) {
     // document.getElementById("recipeId").innerHTML = data['meals'][0]['strMeal'];
     // document.getElementById("recipeInstruction").innerHTML = data['meals'][0]['strInstructions'];
 
-    HideContainer();
-    ShowContainer();
-    document.getElementsByClassName("row discover__destination__image")[0].scrollIntoView();
+    // HideContainer();
+    // ShowContainer();
+    modalShow();
+    // document.getElementsByClassName("row discover__destination__image")[0].scrollIntoView();
+
+
+
     //document.getElementById("").focus({ focusVisible: true });
 
   }
@@ -108,32 +114,28 @@ async function addRecipeExplaination(id) {
   }
 }
 
-function HideContainer() {
-  var getContainer = document.getElementById("discover");
-
-  if (getContainer.style.display === "block") {
-    getContainer.style.display = "none";
-  } else {
-    getContainer.style.display = "none";
-  }
-}
-function ShowContainer() {
-  var getContainer = document.getElementById("discover");
-  if (getContainer.style.display === "none") {
-    getContainer.style.display = "block";
-  } else {
-    getContainer.style.display = "block";
-  }
-}
-
-function showImage() {
-  var img = document.getElementById('img_notif');
-  img.style.visibility = 'visible';
-}
-
 function hideImage() {
   var img = document.getElementById('img_notif');
   img.style.visibility = 'hidden';
 }
+
+function hideArrow()
+{
+  var getArrowPrev = document.getElementById("prev-button");
+  getArrowPrev.style.display = "none";
+  var getArrowNext = document.getElementById("next-button");
+  getArrowNext.style.display = "none";
+}
+
+
+function showSpinner() {
+  document.getElementById('loader').style.display = 'inline-block';
+}
+
+
+function hideSpinner() {
+  document.getElementById('loader').style.display = 'none';
+}
+
 
 

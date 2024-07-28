@@ -12,7 +12,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    
+    <link rel="stylesheet" href="css/loader.css" />
     <title>SajiKU</title>
   </head>
   <body>
@@ -64,10 +64,11 @@
           </div>
         </div>
       </div>
+      
       <div class="special__grid" id="special__grid">
-            
+        <span  id="loader" class="loader"></span>
       </div>
-      <img src="assets/maaf.png" id="img_notif" class="img_notif" alt="destination" hidden />
+      <img src="/assets/maaf.png" id="img_notif" class="img_notif" alt="destination" hidden />
       <br>
       <p id="search_box_notif"  class="search_box_notif"></p>
       <nav class="pagination-container">
@@ -76,14 +77,14 @@
         </button>
     
         <div id="pagination-numbers">
-    
+      <!-- Modal Open Button -->
+
         </div>
-    
         <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
           &gt;
         </button>
       </nav>
-      <section class="section__container discover__container" id="discover">
+      <!-- <section class="section__container discover__container" id="discover">
         <h2 class="section__header">
           Recipe
         </h2>
@@ -101,18 +102,43 @@
             </p>  
           </div>
         </div>
-      </section>
+      </section> -->
     <footer class="footer" id="contact">
       <div class="footer__bar">
         Copyright © 2024 Majalah Saji Web. All rights reserved.
       </div>
     </footer>
+     <!-- Modal Background and Modal -->
+       <!-- Modal Open Button -->
+  <!-- <button id="open-btn">
+    OPEN THE MODAL
+  </button> -->
+  <div id="modal-background">
+    <div id="modal">
+      <div class="discover__destination">
+        <span id="close-btn">&times;</span>
+        <p id="recipe_header">recipe header</p>
+        <br>
+        <div class="discover__destination__image" id="discover__destination__image">
+          <img src="" id="recipe-img2" alt="destination" />
+        </div>
+        <h4 id="h4_recipe">Discover your dream<br />destinations</h4>
+        <p id="p_recipe" class="destination__description">
+          Navigate through a curated selection of travel options, each
+          designed to ignite your wanderlust and fulfill your travel
+          aspirations.
+        </p>  
+
+      </div>
+    </div>
+  </div>
+
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/fetch.js"></script>
     <script type="text/javascript" src="js/paginate.js"></script>
- 
+    <script type="text/javascript" src="js/modal.js"></script>
   </body>
 </html>

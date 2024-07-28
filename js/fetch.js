@@ -1,30 +1,29 @@
-var getContainer = document.getElementById("discover");
-getContainer.style.display = "none";
-
 var checked = true;
-console.log('test runiin');
-hideImage();  
+console.log('test runiin'); 
 //document.getElementById("getRecipeBtn").addEventListener("click", fetchData());
 //document.getElementById("getRecipeBtn").onclick = checkData();
 // fetchData();
+hideImage(); 
 var foodName = document.getElementById("foodname").value = '';
-var getArrowPrev = document.getElementById("prev-button");
-getArrowPrev.style.display = "none";
-var getArrowNext = document.getElementById("next-button");
-getArrowNext.style.display = "none";
+hideArrow();
 var checkSearch = '';
 var data = [];
 async function fetchData() {
+  showSpinner();
   var arrayLength = 0;
   var recipeTags = '';
   ClickDisabled();
-  HideContainer();
   try {
 
       //tiap kali seach kosongkan dulu semua cardnya dan paginated list
       data = [];
       let cardList = document.getElementById("special__grid");
+      let cekItem = cardList.querySelectorAll(".blog__card");
+      cekItem.forEach((element) => console.log(element));
+
+
       let listItems = cardList.querySelectorAll(".blog__card").forEach(e => e.remove());;
+      
       let paginationNumbers = document.getElementById("pagination-numbers");
       let listpage = paginationNumbers.querySelectorAll(".pagination-number").forEach(e => e.remove());;
       
@@ -41,6 +40,7 @@ async function fetchData() {
       {
         document.getElementById("search_box_notif").innerHTML = 'Maaf resep tidak ditemukan...';
         showImage();
+        hideArrow();
       }
       else
       {
@@ -119,7 +119,9 @@ async function fetchData() {
 
   }
   catch (error) {
+    hideSpinner();
     console.error(error);
   }
   ClickEnabled();
+  hideSpinner();
 }

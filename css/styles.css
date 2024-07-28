@@ -412,32 +412,91 @@ nav {
 .discover__destination {
   overflow: hidden;
   padding: 2rem;
-  border-radius: var(--border-radius);
-  background-color: whitesmoke;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .discover__destination__image {
   margin-bottom: 2rem;
   display: flex;
-  align-items: center;
+  align-items: left;
   gap: 1rem;
-  justify-content: right;
+  justify-content: left;
 }
 
 .discover__destination__image img {
   max-width:550px;
-  height: 250px;
+  height: 400px;
   object-fit: cover;
   border-radius: var(--border-radius);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .destination__description {
   margin-bottom: 2rem;
   max-width: 1000px;
-  font-weight: 300;
+  font-size: 1rem;
 }
+/* modal part */
+#modal-background {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+
+}
+
+
+#modal {
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  max-width: 100%;
+  max-height: 800px;
+  overflow: scroll;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  font-size: 1.5rem;
+  animation-name: animatemodal;
+  animation-duration: 0.4s;
+  display: inline-block;
+}
+
+
+
+#close-btn {
+  font-size: 30px;
+  align-self: flex-end;
+  padding-left: 1085px;
+}
+
+#close-btn:hover {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+/* modal part end */
+
+/* animation part */
+@keyframes animatemodal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+/* animation part end */
 
 @media (width > 540px) {
   .special__grid {
