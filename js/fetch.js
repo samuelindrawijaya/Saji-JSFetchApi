@@ -122,6 +122,11 @@ async function fetchData() {
     hideSpinner();
     console.error(error);
   }
-  ClickEnabled();
-  hideSpinner();
+  finally {
+    console.log("This will show only after fetch completes either with or without success");
+    // Here we can call a function like goAheadAndPerformTheNextTaskInLine();
+    ClickEnabled();
+    hideSpinner();
+  }
+
 }
